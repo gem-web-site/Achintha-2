@@ -1,167 +1,154 @@
-/* Header */
+/* Header Styles */
 .header {
-  width: 100%;
-  padding: 0.8rem 0;
-  position: fixed;
-  z-index: 1000;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 100px;
-  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #42424277;
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 0 30px;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
+.header.scrolled {
+  background-color: #000000ce; /* Semi-transparent background when scrolled */
+}
+
+/* Logo */
 .logo {
-  flex-grow: 1;
-  text-align: center;
-}
-
-.logo img {
-  height: auto;
-  max-width: 150px;
-}
-
-/* Left Navigation */
-.leftNav {
+  cursor: pointer;
   display: flex;
-  gap: 4em;
-  margin-right: auto;
+  align-items: center;
 }
 
-/* Right Navigation */
+.logoImage {
+  width: 150px;
+  height: auto;
+}
+
+/* Left and Right Navigation */
+.leftNav,
 .rightNav {
   display: flex;
-  gap: 4em;
-  margin-left: auto;
+  align-items: center;
 }
 
-/* Navigation Links */
+.leftNav ul,
+.rightNav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.leftNav ul li,
+.rightNav ul li {
+  margin: 0 15px;
+}
+
 @font-face {
   font-family: "Boldwinn";
-  src: url("/fonts/Boldwinn.otf") format("woff2");
+  src: url("/Fonts/Boldwinn.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-.leftNav a,
-.rightNav a {
+.leftNav ul li a,
+.rightNav ul li a {
+  color: white;
   text-decoration: none;
-  font-family: 'Boldwinn', sans-serif;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  transition: transform .2s;
+  font-size: 1.4rem;
+  font-family: "Boldwinn", sans-serif;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
-.leftNav a:hover,
-.rightNav a:hover {
-  color: #eeda67;
-  transform: scale(1.1);
+.leftNav ul li a:hover,
+.rightNav ul li a:hover {
+  color: #bdc003;
 }
 
 /* Mobile Menu Icon */
 .menuIcon {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  font-size: 24px;
   cursor: pointer;
-  z-index: 1001;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  position: sticky;
-  background-color: rgb(217, 203, 165);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Menu Icon Animation */
-.bar1 {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.bar2 {
-  opacity: 0;
-}
-
-.bar3 {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Mobile Menu */
-.mobileMenu {
-  display: none;
+/* Mobile Navigation (Full Screen) */
+.mobileNav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: #fff;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Blur effect */
+  background-color: rgba(0, 0, 0, 0.281);
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Hide initially */
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
   z-index: 1000;
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.mobileMenuOpen {
+.mobileNav.open {
+  opacity: 1; /* Fade in */
+  visibility: visible; /* Show when open */
+}
+
+.mobileNavHeader {
   display: flex;
-  opacity: 1;
-  transform: translateY(0);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 0;
 }
 
-.closeButton {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
+.closeIcon {
+  font-size: 24px;
   cursor: pointer;
-  color: #000;
+  transition: transform 0.3s ease;
 }
 
-.mobileLogo {
-  margin-bottom: 2rem;
+.closeIcon:hover {
+  transform: scale(1.1); /* Scale animation on hover */
 }
 
-.mobileLogo img {
-  height: auto;
-  max-width: 150px;
-}
-
-/* Mobile Navigation Links */
-.mobileNav {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.mobileNavLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-.mobileNav a {
+.mobileNavLinks li {
+  margin: 20px 0;
+}
+
+.mobileNavLinks li a {
+  color: white;
+  font-family: "Boldwinn", sans-serif;
   text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.mobileNav a:hover {
-  color: #555;
+.mobileNavLinks li a:hover {
+  color: #bdc003;
+  transform: scale(1.1); /* Scale animation on hover */
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .leftNav,
   .rightNav {
@@ -169,30 +156,15 @@
   }
 
   .menuIcon {
-    display: flex;
-    /* margin-left: 15px; */
-    /* z-index: 1000; */
+    display: block;
   }
+}
 
-  .logo {
-    flex-grow: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* .logo img {
-    height: auto;
-    max-width: 90px;
-  } */
-
-  .container {
-    margin: 58px 10px;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    /* background-color: #2e2e2e8e;
-    backdrop-filter: blur(10px); */
-    /* padding: 30px 0;
-    width: 100%; */
+@media (max-width: 1050px) {
+  .leftNav ul li a,
+  .rightNav ul li a {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 1.2em;
   }
 }

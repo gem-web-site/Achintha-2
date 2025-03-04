@@ -9,7 +9,8 @@
   position: relative; /* For logo positioning */
 }
 
-.quickLinks, .reachUs {
+.quickLinks,
+.reachUs {
   flex: 1;
   margin: 10px 100px;
 }
@@ -35,7 +36,7 @@
 }
 
 .reachUs .heading {
-  margin-left: 210px;
+  margin-left: 150px;
 }
 
 .linksList {
@@ -95,8 +96,6 @@
   transition: transform 0.3s ease;
 }
 
-
-
 .contactIcon {
   color: #ffffff;
   font-size: 1.2rem;
@@ -141,6 +140,26 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .reachUs {
+    margin-right: 0px;
+  }
+  .quickLinks {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .reachUs .heading {
+    margin-left: 50px;
+    margin-right: 0;
+  }
+  .contactInfo {
+    margin-left: 50px;
+    margin-right: 0;
+  }
+}
+
 /* Mobile Mode */
 @media (max-width: 767px) {
   .container {
@@ -149,7 +168,8 @@
     text-align: center; /* Center text in mobile mode */
   }
 
-  .quickLinks, .reachUs {
+  .quickLinks,
+  .reachUs {
     width: 100%;
     margin: 10px 0;
     text-align: left;
@@ -169,7 +189,7 @@
     margin-left: 0px;
   }
 
-  .contactInfo{
+  .contactInfo {
     margin: 0;
   }
 

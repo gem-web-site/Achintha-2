@@ -64,17 +64,28 @@
     cursor: pointer;
     font-weight: bold;
   }
+
+  .submitButton:hover{
+    background-color: #0a8138c4;
+    color: #ffffff;
+    border: solid -100px #0a8138;
+  }
   
   .links {
     margin-top: 15px;
   }
-  
   .link {
     display: block;
     color: #7FE1A5;
     text-decoration: none;
     margin: 5px 0;
+    transition-duration: 0.2s
   }
+  
+  .link:hover{
+    transform: translateX(10px);
+  }
+
   
   /* Right Side - Contact Info */
   .reachSection {

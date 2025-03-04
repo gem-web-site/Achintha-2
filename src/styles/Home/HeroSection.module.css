@@ -9,7 +9,7 @@
 /* Slides */
 .slidesContainer {
   display: flex;
-  width: 500%; 
+  width: 500%;
   height: 120%;
   transition: transform 1s ease-in-out;
 }
@@ -64,7 +64,8 @@
 }
 
 /* Navigation Arrows */
-.arrowLeft, .arrowRight {
+.arrowLeft,
+.arrowRight {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -87,8 +88,8 @@
 
 /* Welcome Slide */
 @font-face {
-  font-family: 'Qurova';
-  src: url('/Fonts/QurovaDEMO-Bold.otf') format('woff2');
+  font-family: "Qurova";
+  src: url("/Fonts/QurovaDEMO-Bold.otf") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -98,14 +99,14 @@
 }
 
 .welcomeSlide .slideContent h1 {
-  color: #97B3E2;
+  color: #97b3e2;
   font-size: 30px;
 }
 
 .welcomeSlide .slideContent h2 {
   font-size: 60px;
   line-height: 0%;
-  font-family: 'Qurova';
+  font-family: "Qurova";
 }
 
 .welcomeSlide .slideContent p {
@@ -119,13 +120,13 @@
 }
 
 .gemsSlide .slideContent h1 {
-  color: #FD6595;
+  color: #fd6595;
   font-size: 60px;
-  font-family: 'Qurova';
+  font-family: "Qurova";
 }
 
 .gemsSlide .slideContent button {
-  background-color: #8A003B;
+  background-color: #8a003b;
   color: #f3c5c5;
 }
 
@@ -136,9 +137,9 @@
 }
 
 .currencySlide .slideContent h1 {
-  color: #2ba502;
+  color: #6efc43;
   font-size: 60px;
-  font-family: 'Qurova';
+  font-family: "Qurova";
 }
 
 .currencySlide .slideContent button {
@@ -153,9 +154,9 @@
 }
 
 .goldSlide .slideContent h1 {
-  color: #E7C358;
+  color: #e7c358;
   font-size: 60px;
-  font-family: 'Qurova';
+  font-family: "Qurova";
 }
 
 .goldSlide .slideContent button {
@@ -170,13 +171,13 @@
 }
 
 .premiumSlide .slideContent h1 {
-  color: #DDBFA9;
+  color: #ddbfa9;
   font-size: 60px;
-  font-family: 'Qurova';
+  font-family: "Qurova";
 }
 
 .premiumSlide .slideContent button {
-  background-color: #CC8958;
+  background-color: #cc8958;
   color: #e4e9dc;
 }
 
@@ -210,7 +211,8 @@
     background-position: top;
   }
 
-  .arrowLeft, .arrowRight {
+  .arrowLeft,
+  .arrowRight {
     padding: 8px;
   }
 
@@ -218,19 +220,19 @@
   .welcomeSlide .slideContent h1 {
     font-size: 20px;
   }
-  
+
   .welcomeSlide .slideContent h2 {
     font-size: 35px;
   }
-  
+
   .premiumSlide .slideContent h1 {
     font-size: 40px;
   }
-
 }
 
 /* Navigation Arrows */
-.arrowLeft, .arrowRight {
+.arrowLeft,
+.arrowRight {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -255,8 +257,15 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .arrowLeft, .arrowRight {
+  .arrowLeft,
+  .arrowRight {
     padding: 10px; /* Smaller padding for mobile */
     font-size: 18px; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 450px) {
+  .welcomeSlide .slideContent h2 {
+    line-height: 100%;
   }
 }

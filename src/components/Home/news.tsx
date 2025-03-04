@@ -109,7 +109,8 @@ export default function News() {
                 <img src={news.image} alt={news.title} />
                 <div className={styles.latestNewsItemContent}>
                   <h3>{news.title}</h3>
-                  <p>{news.content}</p>
+                  <p>{news.content}
+                  </p>
                 </div>
               </div>
             ))}
